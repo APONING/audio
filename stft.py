@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import librosa.display
 
 plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
 # 载入双声道音频文件
 audio_file = '375milk_1_1s.wav'
 y, sr = librosa.load(audio_file, mono=False)
@@ -66,4 +67,5 @@ plt.xlabel('时间 (秒)', fontsize=16)
 plt.ylabel('振幅', fontsize=16)
 
 plt.tight_layout()
+plt.savefig('stft.png')
 plt.show()
